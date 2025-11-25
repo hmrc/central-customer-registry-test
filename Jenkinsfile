@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "${env.EXT_PIPLINE_AGENT}"
+        label "${env.EXT_PIPELINE_AGENT}"
     }
 
     stages {
