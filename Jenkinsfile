@@ -7,6 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out source code..."
+                sh 'mvn --help'
             }
         }
         stage('Build') {
