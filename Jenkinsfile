@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo "Checking out source code..."
                 sh '''#!/bin/bash
+echo $PATH
   mvn --help'''
             }
         }
