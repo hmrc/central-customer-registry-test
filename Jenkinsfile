@@ -9,6 +9,7 @@ pipeline {
                 echo "Checking out source code..."
                 sh '''#!/bin/bash
 echo $PATH
+ls -l /opt
   mvn --help'''
             }
         }
