@@ -9,7 +9,7 @@ pipeline {
                 echo "Checking out source code..."
                 sh '''#!/bin/bash
 echo $PATH
-ls -l /opt
+ls -l /opt/apache-maven-3.9.11
   mvn --help'''
             }
         }
