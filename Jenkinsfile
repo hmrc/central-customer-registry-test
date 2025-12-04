@@ -9,8 +9,8 @@ pipeline {
                 echo "Checking out source code..."
                 sh '''#!/bin/bash
 echo $PATH
-ls -l /opt/apache-maven-3.9.11
-  mvn --help'''
+ls -l /opt/apache-maven-3.9.11/bin
+/opt/apache-maven-3.9.11/bin/mvn --help'''
             }
         }
         stage('Build') {
