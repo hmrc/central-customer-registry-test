@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checking out source code..."
-                sh '/opt/apache-maven-3.9.11/bin/mvn --help'
+                sh '#!/bin/bash; /opt/apache-maven-3.9.11/bin/mvn --help'
             }
         }
         stage('Build') {
