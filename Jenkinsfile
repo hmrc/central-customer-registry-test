@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Checking out source code..."
                 sh '#!/bin/bash\n set'
-                sh '#!/bin/bash\n /opt/apache-maven-3.9.11/bin/mvn --help'
+                sh '#!/bin/bash\n mvn --version'
             }
         }
         stage('Build') {
