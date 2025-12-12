@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Checking out source code..."
                 sh '#!/bin/bash\n ls -l /home/jenkins/.local/bin'
-                sh '#!/bin/bash\n ls -lR /opt/mvn'
+                sh '#!/bin/bash\n ls -lR /opt'
                 sh '#!/bin/bash\n mvn --version'
             }
         }
