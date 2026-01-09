@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building Fun Service..."
+                echo "$PIPELINE_BRANCH"
             }
         }
         stage('Test') {
