@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'set'
+                sh 'env'
                 sh 'echo $PATH'
                 echo "Checking out source code..."
                 sh 'echo ${AGENT_IMAGE_VERSION}'
