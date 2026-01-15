@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh 'env'
-                sh 'echo $PATH'
+                sh 'which java'
                 echo "Checking out source code..."
                 sh 'echo ${AGENT_IMAGE_VERSION}'
                 sh '/opt/apache-maven-3.9.11/bin/mvn --version'
