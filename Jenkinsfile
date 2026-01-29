@@ -6,10 +6,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh 'echo ${AGENT_IMAGE_VERSION}'
                 sh 'sfdx --help'
                 sh 'which java'
                 echo "Checking out source code..."
-                sh 'echo ${AGENT_IMAGE_VERSION}'
                 sh 'mvn --version'
             }
         }
