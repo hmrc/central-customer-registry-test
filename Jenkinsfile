@@ -57,7 +57,9 @@ pipeline {
 					*/
 
 					sh '''
+						echo "-----BEGIN PUBLIC KEY-----" > server.key
 						echo "${JWT_KEY}" > server.key
+						echo "-----END PUBLIC KEY-----" > server.key
 						chmod 600 server.key
 						cat server.key
 
