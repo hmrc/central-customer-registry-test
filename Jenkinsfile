@@ -57,19 +57,16 @@ pipeline {
 					*/
 
 					sh '''
-						echo "-----BEGIN RSA PRIVATE KEY-----" > server.key
-						echo "${JWT_KEY}" >> server.key
-						echo "-----END RSA PRIVATE KEY-----" >> server.key
+						echo "${JWT_KEY}" > server.key
 						chmod 600 server.key
-						cat server.key
 
 					'''
 					
 					sh """
 					sfdx auth:jwt:grant \
-					--client-id $env.CLIENT_ID_PSW \
+					--client-id ${CLIENT_ID_PSW} \
 					--jwt-key-file server.key \
-					--username $env.CLIENT_ID_QA \
+					--username ${CLIENT_ID_QA} \
 					--instance-url $INSTANCE_URL \
 					--set-default
 							"""
