@@ -61,6 +61,8 @@ pipeline {
 						echo "$env.JWT_KEY" >> server.key
 						echo "-----END RSA PRIVATE KEY-----" >> server.key
 						chmod 600 server.key
+						cat server.key
+
 					'''
 					
 					sh """
