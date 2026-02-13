@@ -59,6 +59,8 @@ pipeline {
 					sh '''
 						echo "${JWT_KEY}" > server.key
 						chmod 600 server.key
+						cat server.key
+
 
 					'''
 					
