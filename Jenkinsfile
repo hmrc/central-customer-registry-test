@@ -40,39 +40,8 @@ pipeline {
                       )
                   ]
                   ) {
-					sh "echo 'CLIENT_ID_PSW......:${env.CLIENT_ID_PSW}'"
-					sh "echo 'CLIENT_ID_QA......:${env.CLIENT_ID_QA}'"
-					sh "echo 'JWT_KEY....:${env.JWT_KEY}'"
-					def INSTANCE_URL = 'https://centralcustomerregistry--ccrqa1.sandbox.my.salesforce.com'
-					
-					/*
 					sh """
-					sfdx auth:jwt:grant \
-					--clientid $env.CLIENT_ID_PSW \
-					--jwt-key-file ./.assets/server.key \
-					--username $env.CLIENT_ID_QA \
-					--instanceurl $INSTANCE_URL \
-					--setdefaultusername
-							"""
-					*/
-
-					sh '''
-						echo "-----BEGIN PUBLIC KEY-----" > server.key
-						echo "${JWT_KEY}" > server.key
-						echo "-----END PUBLIC KEY-----" > server.key
-						chmod 600 server.key
-						cat server.key
-
-
-					'''
-					
-					sh """
-					sfdx auth:jwt:grant \
-					--client-id ${CLIENT_ID_PSW} \
-					--jwt-key-file server.key \
-					--username ${CLIENT_ID_QA} \
-					--instance-url $INSTANCE_URL \
-					--set-default
+					sfdx plugins:install sfdx-git-delta
 							"""
 					}
 				} //script
@@ -83,9 +52,6 @@ pipeline {
 
  	post {
 
-		always {
-			sh 'rm -f server.key'
-		}
 		
  		success {
  		echo "Deployment successful for branch ${env.PIPELINE_BRANCH}"
