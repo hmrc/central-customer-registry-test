@@ -19,6 +19,7 @@ pipeline {
 		CLIENT_ID_PROD = credentials('ccr-salesforce-prod-client')
 		//CLIENT_ID_QA = credentials('ccr-salesforce-qa-client')
 		CLIENT_ID_SIT = credentials('ccr-salesforce-sit-client')
+                SF_NPM_REGISTRY = https://artefacts.tax.service.gov.uk/artifactory/api/npm/npmjs
  	}
 
  	stages {
@@ -41,7 +42,7 @@ pipeline {
                   ]
                   ) {
 					sh """
-					sfdx plugins:install sfdx-git-delta
+					echo y | sfdx plugins:install sfdx-git-delta
 							"""
 					}
 				} //script
