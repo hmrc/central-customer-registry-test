@@ -42,7 +42,7 @@ pipeline {
                   ]
                   ) {
 					sh """
-					echo y | sfdx plugins:install sfdx-git-delta
+npm install newman
 							"""
 					}
 				} //script
