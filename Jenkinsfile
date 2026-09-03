@@ -44,7 +44,7 @@ pipeline {
 					sh """
 echo $PATH
 which node
-ls -l /home/jenkins/.local/bin
+ls -Rl /home/jenkins/.nvm
 							"""
 					}
 				} //script
