@@ -42,6 +42,7 @@ pipeline {
                   ]
                   ) {
 					sh """
+echo $PATH
 which node
 							"""
 					}
