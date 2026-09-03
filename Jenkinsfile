@@ -43,6 +43,7 @@ pipeline {
                   ) {
 					sh """
 fnm install 22
+fnm --help
 npm
 							"""
 					}
