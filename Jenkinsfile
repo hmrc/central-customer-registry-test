@@ -42,7 +42,7 @@ pipeline {
                   ]
                   ) {
 					sh """
-npm install newman
+which node
 							"""
 					}
 				} //script
