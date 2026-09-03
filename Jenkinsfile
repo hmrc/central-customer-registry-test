@@ -42,9 +42,8 @@ pipeline {
                   ]
                   ) {
 					sh """
-echo $PATH
-which node
-ls -Rl /home/jenkins/.nvm
+fnm install 22
+npm
 							"""
 					}
 				} //script
